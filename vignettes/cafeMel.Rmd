@@ -1,0 +1,67 @@
+---
+title: "The boom of coffee business in Melbourne: Does citizens' age and income drive this trend?"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{cafeMel}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+## Overview
+
+Coffee culture has been a significant part of Melbourne's lifestyle. The city is known for its vibrant coffee scene, with a plethora of cafes and coffee shops scattered throughout the city. In recent years, the number of cafes in Melbourne has been on the rise, with new cafes opening up every day. What are the driven factors behind this trend? The **cafeMel** package aims to provide useful data sets and functions to explore the growing patterns of the industry and whether the census information can further forecast the trends.
+
+## Installation
+
+The released version of **cafeMel** from Github can be installed by running the following code:
+
+```{r installation, echo = TRUE, eval = FALSE, message=FALSE, warning=FALSE}
+# install.packages("remotes")
+
+remotes::install_github("ETC5523-2024/assignment-4-packages-and-shiny-apps-anhLe68")
+
+```
+
+## Usage
+
+```{r library, echo = TRUE, message=FALSE, warning=FALSE}
+library(cafeMel)
+library(dplyr)
+library(ggplot2)
+library(tibble)
+library(kableExtra)
+library(sf)
+```
+
+### High concentration of cafe shops in central Melbourne suburbs
+
+```{r cafe count, echo = TRUE, message=FALSE, warning=FALSE}
+
+vic_coffee_map |> 
+  group_by(Location) |>
+  ggplot() +
+  geom_sf(aes(fill = cafe_count), color = "black", size = 1) +
+  theme_void() +
+  facet_wrap(~census_year) +
+  scale_fill_viridis_c() +
+  labs(title = "Number of cafes in Melbourne suburbs", fill = "Cafe count") 
+```
+We can focus on each year
+
+```{r}
+map_plot(2021)
+```
+### Age and income distribution of Melbourne citizens
+
+```{r}
+census_suburb 
+```
+

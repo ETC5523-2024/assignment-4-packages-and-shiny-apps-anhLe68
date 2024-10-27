@@ -18,3 +18,7 @@ Imports:
     shiny,
     shinythemes,
     tibble
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
