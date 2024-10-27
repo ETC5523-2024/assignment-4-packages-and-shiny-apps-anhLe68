@@ -44,3 +44,6 @@ vic_coffee_map |>
         axis.title.x = element_blank()) +
   labs(title = "Melbourne Suburbs Map")
 ```
+
+Further information and examples can be found in
+[Here](https://etc5523-2024.github.io/assignment-4-packages-and-shiny-apps-anhLe68/).
