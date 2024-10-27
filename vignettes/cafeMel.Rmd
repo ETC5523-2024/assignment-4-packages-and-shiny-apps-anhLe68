@@ -39,6 +39,7 @@ library(ggplot2)
 library(tibble)
 library(kableExtra)
 library(sf)
+library(gridExtra)
 ```
 
 ### High concentration of cafe shops in central Melbourne suburbs
@@ -54,14 +55,45 @@ vic_coffee_map |>
   scale_fill_viridis_c() +
   labs(title = "Number of cafes in Melbourne suburbs", fill = "Cafe count") 
 ```
-We can focus on each year
 
-```{r}
+
+The overall map shows that the number of cafes in Melbourne has been increasing over the years. The central suburbs, such as Melbourne CBD, Carlton, and South Yarra witnessed the highest concentration of cafes during the period. Observing this trend, it is interesting to explore whether the age and income distribution of citizens in these domain suburbs have any correlation with the number of cafes.
+
+The package provides functions to visualize the number of cafes of every suburbs in a specific year. The function `map_plot` takes the year as an argument and returns a map chart showing the number of cafes in Melbourne suburbs in the selected time.
+
+```{r cafe count 2021, echo = TRUE, message=FALSE, warning=FALSE}
 map_plot(2021)
 ```
+
+
 ### Age and income distribution of Melbourne citizens
 
-```{r}
-census_suburb 
+The package also includes the census data of Melbourne citizens in 2016 and 2021. The data set contains information about the median age and median income of citizens in each suburb. The following code snippet shows the age and income distribution of Melbourne citizens in 2021.
+
+```{r 2021 data, echo = TRUE, message=FALSE, warning=FALSE}
+vic_coffee_21 <- vic_coffee_map |> 
+  filter(census_year == 2021) |> 
+  left_join(census_suburb, by = "Location") |> 
+  select(- c("Median_age_16", "Median_income_16"))|>
+  arrange(desc(cafe_count))
 ```
+
+```{r 2021 plot, echo = TRUE, message=FALSE, warning=FALSE}
+vic_coffee_21 |> 
+  ggplot(aes(x = Median_income_21, 
+             y = cafe_count)) + 
+  geom_point(aes(color = Location))  +
+  labs(x = "Median income", 
+       y = "Number of coffe shops",
+       title = "Income distribution of Melbourne citizens in 2021 (compared with cafes count)") +
+  theme_minimal() +
+  theme(legend.position = "none")
+
+```
+
+
+## Review
+
+The **cafeMel** package provides a clean data set and simple functions to explore the coffee business in Melbourne. The package allows users to visualize the concentration of cafes in Melbourne suburbs and the age and income distribution of citizens. However, to improve the user experience, more updated data sets and relevant information could be combined to provide more valuable insights and further analysis.
+ 
 
