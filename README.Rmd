@@ -33,7 +33,7 @@ install_github("ETC5523-2024/assignment-4-packages-and-shiny-apps-anhLe68")
 
 This example gives the overview map of Melbourne suburbs locations.
 
-```{r example}
+```{r example, eval = FALSE}
 library(cafeMel)
 library(dplyr)
 library(ggplot2)
@@ -50,7 +50,5 @@ vic_coffee_map |>
   labs(title = "Melbourne Suburbs Map")
 ```
 
-
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.
 
 

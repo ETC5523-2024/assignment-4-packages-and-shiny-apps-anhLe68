@@ -31,17 +31,8 @@ This example gives the overview map of Melbourne suburbs locations.
 ``` r
 library(cafeMel)
 library(dplyr)
-#> 
-#> Attaching package: 'dplyr'
-#> The following objects are masked from 'package:stats':
-#> 
-#>     filter, lag
-#> The following objects are masked from 'package:base':
-#> 
-#>     intersect, setdiff, setequal, union
 library(ggplot2)
 library(sf)
-#> Linking to GEOS 3.12.1, GDAL 3.8.4, PROJ 9.3.1; sf_use_s2() is TRUE
 
 vic_coffee_map |> 
   group_by(Location) |>
@@ -53,8 +44,3 @@ vic_coffee_map |>
         axis.title.x = element_blank()) +
   labs(title = "Melbourne Suburbs Map")
 ```
-
-<img src="man/figures/README-example-1.png" width="100%" />
-
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this.
