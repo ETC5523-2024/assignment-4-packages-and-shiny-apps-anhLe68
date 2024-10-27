@@ -1,7 +1,7 @@
 launch_app <- function() {
 
   # Set up the resource path for HTML files
-  shiny::addResourcePath("html", system.file("www/html", package = "Melcafe"))
+  shiny::addResourcePath("html", system.file("inst/www/html", package = "Melcafe"))
 
   # Define the UI
   ui <- shiny::tagList(
