@@ -1,3 +1,13 @@
+#' Map of the concentration of coffee shops in Melbourne suburbs
+#'
+#' @param 'census year'
+#'
+#' @return 'ggplot2' map showing the number of coffee shops in Melbourne city
+#' @export
+#'
+#' @examples
+#' map_plot(2016)
+
 map_plot <- function(year) {
   vic_coffee_map |>
     # Filter the data to the year of interest

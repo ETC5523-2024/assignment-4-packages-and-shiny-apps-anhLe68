@@ -1,3 +1,13 @@
+#' Bar charts of the concentration of coffee shops in a suburb
+#'
+#' @param 'using location as choice of suburb'
+#'
+#' @return 'ggplot2' bar plot showing the number of coffee shops in a suburb
+#' @export
+#'
+#' @examples
+#' bar_plot("Carlton")
+
 bar_plot <- function(suburb) {
   vic_coffee_map |>
     # Filter the data to the location of interest
