@@ -11,8 +11,8 @@ the course ETC5523-2024: Communication with Data. This package is a
 simple package that provides functions to explore the data of coffee
 business in Melbourne in the period from 2002 to 2022. An interactive
 shiny app is also included in the package to help users to explore
-census data and information of coffee shops, observing any interactive
-characteristic in the industry.
+census data and information of coffee shops, observing any correlation
+and special characteristic in the industry.
 
 ## Installation
 
