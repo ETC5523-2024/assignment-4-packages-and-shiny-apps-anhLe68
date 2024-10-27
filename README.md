@@ -21,7 +21,7 @@ follow this code:
 
 ``` r
 # install.packages("remotes")
-install_github("ETC5523-2024/assignment-4-packages-and-shiny-apps-anhLe68")
+remotes::install_github("ETC5523-2024/assignment-4-packages-and-shiny-apps-anhLe68")
 ```
 
 ## Example
