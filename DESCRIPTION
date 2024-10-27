@@ -1,12 +1,10 @@
 Package: cafeMel
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Title: Explore the coffee business in Melbourne suburbs
+Version: 0.0.0.1
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+    person("Phuong Anh", "Le", , "plee0068@student.monash.edu", role = c("aut", "cre"))
+Description: The package provides datasets of coffee shops in Melbourne suburbs and information on census data of corresponding locations. The package allows users to explore the coffee business in the main Melbourne suburbs and  insights into citizens' demographic characteristics.
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
